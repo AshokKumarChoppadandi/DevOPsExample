@@ -1,0 +1,37 @@
+name: My First Github Action using Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 - Checking out to main branch.
+        uses: actions/checkout@v4
+
+      # Setting up the JDK 8
+      - name: Step 2 - Set up JDK 8 for publishing to GitHub packages
+        uses: actions/setup-java@v4
+        with:
+          java-version: '8'
+          distribution: 'zulu'
+
+      - name: Step 3 - Clean the project
+        run: mvn clean
+
+      - name: Step 4 - Compile the project
+        run: mvn compile
+
+      - name: Step 5 - Run Unit Tests
+        run: mvn test
+
+      - name: Step 6 - Build the jar
+        run: mvn package
+
+      - name: Step 7 - Listing all files
+        run: ls -al
+
