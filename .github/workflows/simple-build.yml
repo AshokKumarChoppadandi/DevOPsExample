@@ -35,3 +35,9 @@ jobs:
       - name: Step 7 - Listing all files
         run: ls -al
 
+      - name: Step 8 - Deploying to remote server
+        run: echo "Message deploying to remote server"
+
+      - name: Step 9 - Executing the application
+        run: java -cp target/DevOPsExample-1.0-SNAPSHOT.jar io.github.ashokkumarchoppadandi.HelloWorld 15
+
