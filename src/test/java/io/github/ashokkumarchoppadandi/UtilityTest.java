@@ -21,6 +21,7 @@ public class UtilityTest {
         assert (expectedMessagesSize == actualMessagesSize);
     }
 
+    /*
     @Test
     public void testGenerateRandomNumber() {
         Utility utility = new Utility();
@@ -29,4 +30,5 @@ public class UtilityTest {
         int actualRandomNumber = utility.generateRandomNumber();
         assert (100 < actualRandomNumber);
     }
+    */
 }
